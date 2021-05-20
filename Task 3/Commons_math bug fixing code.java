@@ -37,5 +37,21 @@ public class Bug_fixing {
     }
 
     // MATH-482
+    public double evaluate(double x, double epsilon, int maxIterations) {
 
+        double p1 = getA(0, x);
+        double q1 = 0.0;
+        int n = 1;
+        double c = p1;
+        double hN = p1;
+
+        while (n<maxIterations){
+            final double a = getA(n,x);
+            final double b = getB(n,x);
+            double d = a+b* q1;
+            double c = a+b/ p1;
+            d = 1 / d;
+            final double deltaN = c * d;
+            hN = p1 * deltaN;
+        }
 }
