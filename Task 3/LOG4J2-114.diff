@@ -1,0 +1,18 @@
+diff --git a/api/src/main/java/org/apache/logging/log4j/message/StructuredDataMessage.java b/api/src/main/java/org/apache/logging/log4j/message/StructuredDataMessage.java
+--- a/api/src/main/java/org/apache/logging/log4j/message/StructuredDataMessage.java
++++ b/api/src/main/java/org/apache/logging/log4j/message/StructuredDataMessage.java
+@@ -191,192 c +191,193 @@ public class StructuredDataMessage extends MapMessage implements MultiformatMess
+ 
+    @Override
+    protected void validate(String key, String value) {
+-		if (value.length() > MAX_LENGTH) {
+-            throw new IllegalArgumentException("Structured data values are limited to 32 characters. key: " + key +
++        String valuekey = key;
++        if (valuekey.length() > MAX_LENGTH) {
++            throw new IllegalArgumentException("Structured data keys are limited to 32 characters. key: " + key +
+                " value: " + value);
+        }
+    }
+	
+
+
