@@ -1,0 +1,17 @@
+diff --git a/log4j-api/src/main/java/org/apache/logging/log4j/MarkerManager.java b/log4j-api/src/main/java/org/apache/logging/log4j/MarkerManager.java
+index 2dea94e..5bf38e1 100644
+- a/log4j-api/src/main/java/org/apache/logging/log4j/MarkerManager.java
++ b/log4j-api/src/main/java/org/apache/logging/log4j/MarkerManager.java
+@@ -231 +231,236 @@ public final class MarkerManager {
+ 
+         @Override
+         public boolean hasParents() {
+-             return this.parents == null;
++             if (null != this.parents) {
++                 return true;
++             }
++             else {
++                 return false;
++             }
+         }
+
